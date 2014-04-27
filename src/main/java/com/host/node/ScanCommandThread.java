@@ -10,6 +10,7 @@ import com.host.node.model.UserCommandDTO;
 import com.host.node.request.MainGetRequest;
 import com.host.node.request.MainPostRequest;
 import com.host.node.util.ConstantsUtil;
+import com.host.node.util.StringUtil;
 
 public class ScanCommandThread extends Thread {
 	
@@ -34,7 +35,7 @@ public class ScanCommandThread extends Thread {
 				 
 				System.out.println("Get last command response: " + cmdResponse);
 				
-				if (cmdResponse != null && !cmdResponse.isEmpty()) {
+				if (!StringUtil.isEmpty(cmdResponse)) {
 					// 2. Transfer response to Command DTO
 					UserCommandDTO jsonObject = objectMapper.readValue(cmdResponse, UserCommandDTO.class);
 					
