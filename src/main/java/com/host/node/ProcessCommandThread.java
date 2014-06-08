@@ -21,11 +21,11 @@ public class ProcessCommandThread extends Thread {
 	
 	@Override
 	public void run() {
-		String commandStr = command.getCommandStr();
+		String commandStr = command.getSecureCommandStr();
 		System.out.println("Process command string: " + commandStr);
 		
 		// 1. execute command
-		CommandExecutor executor = new CommandExecutor(commandStr);
+		CommandExecutor executor = new CommandExecutor(commandStr, true);
 		executor.execute();
 		
 		// 2. end command process

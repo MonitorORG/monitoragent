@@ -15,12 +15,17 @@ public class CommandExecutor {
 	private String commandStr;
 	private StringBuffer resultBuffer = new StringBuffer();
 	private boolean isSucess = true;
+	private boolean isSecureCommandStr = false;
 	
-	public CommandExecutor(String commandStr) {
+	public CommandExecutor(String commandStr, boolean isSecureCommandStr) {
 		this.commandStr = commandStr;
+		this.isSecureCommandStr = isSecureCommandStr;
 	}
 	
 	public void execute() {
+		if (isSecureCommandStr) {
+			commandStr = KeystoreUtil.getCommandBySecuredStr(commandStr);
+		}
 		if (commandStr != null && !(commandStr.trim().isEmpty())) {
 			try {
 				

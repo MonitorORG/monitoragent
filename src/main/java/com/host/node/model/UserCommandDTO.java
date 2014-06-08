@@ -8,6 +8,7 @@ public class UserCommandDTO {
 	private String hostMacAddress;
 	
 	private String commandStr;
+	private String secureCommandStr;
 	private Date creationDate;
 	private Date endDate;
 	private String status;
@@ -76,6 +77,12 @@ public class UserCommandDTO {
 	}
 	public void setHostMacAddress(String hostMacAddress) {
 		this.hostMacAddress = hostMacAddress;
+	}
+	public String getSecureCommandStr() {
+		return secureCommandStr;
+	}
+	public void setSecureCommandStr(String secureCommandStr) {
+		this.secureCommandStr = secureCommandStr;
 	}
 
 }

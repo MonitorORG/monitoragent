@@ -10,12 +10,15 @@ public class HostStatusInfoDTO {
 	private double freeMem;
 	
 	private String macAddress;
+	private String status;
 
 	private String createDate;
 	private String updateDate;
 	
 	private String processList;
 	private String processStatusResults;
+	// 0000: Stop
+	// 0001: Running
 	
 	private String commandStr;	
 	private boolean isAgentCommited;	// null is default
@@ -98,6 +101,12 @@ public class HostStatusInfoDTO {
 	}
 	public void setIsAgentCommited(boolean isAgentCommited) {
 		this.isAgentCommited = isAgentCommited;
-	}	
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}		
 	
 }

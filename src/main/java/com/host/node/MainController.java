@@ -132,7 +132,7 @@ public class MainController {
 			StringBuffer procStaInfoBuf = new StringBuffer();
 			processStatusInfo = "";
 			if (!processList.isEmpty()) {
-				CommandExecutor executor = new CommandExecutor("tasklist");
+				CommandExecutor executor = new CommandExecutor("tasklist", false);
 				executor.execute();
 				String tasklistResult = executor.getResult();
 				

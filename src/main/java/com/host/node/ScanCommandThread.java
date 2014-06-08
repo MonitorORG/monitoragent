@@ -14,7 +14,7 @@ import com.host.node.util.StringUtil;
 
 public class ScanCommandThread extends Thread {
 	
-	private int refreshRate = 3000;
+	private int refreshRate = 5000;
 	
 	private boolean isContinue = true;
 	public static ObjectMapper objectMapper = new ObjectMapper();
